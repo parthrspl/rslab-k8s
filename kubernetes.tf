@@ -83,6 +83,9 @@ output "vpc_id" {
 
 provider "aws" {
   region = "ap-south-1"
+  shared_credentials_file = "~/.aws/credentials"
+  profile                 = "kops"
+
 }
 
 resource "aws_autoscaling_group" "master-ap-south-1a-masters-k8s-dev-rishabhlabs-in" {
@@ -466,7 +469,7 @@ resource "aws_subnet" "ap-south-1b-k8s-dev-rishabhlabs-in" {
 }
 
 resource "aws_vpc" "k8s-dev-rishabhlabs-in" {
-  cidr_block           = "10.0.0.0/26"
+  cidr_block           = "10.0.0.0/24"
   enable_dns_hostnames = true
   enable_dns_support   = true
 
