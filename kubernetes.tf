@@ -442,7 +442,7 @@ resource "aws_security_group_rule" "ssh-external-to-node-0-0-0-0--0" {
 
 resource "aws_subnet" "ap-south-1a-k8s-dev-rishabhlabs-in" {
   vpc_id            = "${aws_vpc.k8s-dev-rishabhlabs-in.id}"
-  cidr_block        = "10.2.101.0/24"
+  cidr_block        = "10.0.0.0/25"
   availability_zone = "ap-south-1a"
 
   tags = {
@@ -456,7 +456,7 @@ resource "aws_subnet" "ap-south-1a-k8s-dev-rishabhlabs-in" {
 
 resource "aws_subnet" "ap-south-1b-k8s-dev-rishabhlabs-in" {
   vpc_id            = "${aws_vpc.k8s-dev-rishabhlabs-in.id}"
-  cidr_block        = "10.2.102.0/24"
+  cidr_block        = "10.0.0.128/25"
   availability_zone = "ap-south-1b"
 
   tags = {
